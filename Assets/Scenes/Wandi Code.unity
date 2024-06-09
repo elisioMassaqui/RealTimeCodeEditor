@@ -169,7 +169,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6164836750226807898, guid: c42a4d8b97b66614ea06c6343f524862, type: 3}
       propertyPath: m_fontSize
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6164836750226807898, guid: c42a4d8b97b66614ea06c6343f524862, type: 3}
       propertyPath: m_fontStyle
@@ -189,7 +189,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6164836750226807898, guid: c42a4d8b97b66614ea06c6343f524862, type: 3}
       propertyPath: m_fontSizeBase
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6164836750226807898, guid: c42a4d8b97b66614ea06c6343f524862, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -209,7 +209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6164949451710563334, guid: c42a4d8b97b66614ea06c6343f524862, type: 3}
       propertyPath: m_fontSize
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6164949451710563334, guid: c42a4d8b97b66614ea06c6343f524862, type: 3}
       propertyPath: m_fontStyle
@@ -229,7 +229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6164949451710563334, guid: c42a4d8b97b66614ea06c6343f524862, type: 3}
       propertyPath: m_fontSizeBase
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6164949451710563334, guid: c42a4d8b97b66614ea06c6343f524862, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -253,7 +253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6165097681609180632, guid: c42a4d8b97b66614ea06c6343f524862, type: 3}
       propertyPath: m_fontSize
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6165097681609180632, guid: c42a4d8b97b66614ea06c6343f524862, type: 3}
       propertyPath: m_fontStyle
@@ -273,7 +273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6165097681609180632, guid: c42a4d8b97b66614ea06c6343f524862, type: 3}
       propertyPath: m_fontSizeBase
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6165097681609180632, guid: c42a4d8b97b66614ea06c6343f524862, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -1593,12 +1593,6 @@ MonoBehaviour:
   codeInputField: {fileID: 1307522159}
   compileButton: {fileID: 950203344}
   outputText: {fileID: 2127225098}
-  myScript: {fileID: 1592375811}
-  scriptando: ssssssss
-  interpolado: 0
-  vectorReal: 0
-  vectorIn: 0
-  multiplo: 0
 --- !u!4 &1694627639
 Transform:
   m_ObjectHideFlags: 0

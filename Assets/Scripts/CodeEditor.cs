@@ -16,27 +16,6 @@ public class CodeEditor : MonoBehaviour
     public Button compileButton;
     public TextMeshProUGUI outputText;
 
-    public MyScript myScript;
-
-    public string scriptando;
-
-    public int interpolado = 3;
-    public int vectorReal = 4;
-    public int vectorIn = 3;
-    public int multiplo = 2;
-
-    void Update() {
-
-        myScript.myVariable = scriptando;
-
-
-        if (Input.GetKey(KeyCode.Space))
-        {
-            interpolado = myScript.Interpolar(vectorReal, vectorIn, multiplo);
-            Debug.Log(interpolado);
-        }
-    }
-
     private string defaultCode = @"
 using UnityEngine;
 
@@ -48,6 +27,17 @@ public class DynamicScript : MonoBehaviour
     {
         // Defina ou atualize o valor da variável 'message' aqui
         message = ""Hello, Universe!"";
+
+         MyScript myScript = FindObjectOfType<MyScript>();
+        if (myScript != null)
+        {
+            // Modificar o valor de myVariable no script MyScript
+            myScript.myVariable = ""World!"";
+        }
+        else
+        {
+            Debug.LogError(""MyScript não encontrado na cena!"");
+        }
     }
 
     public string GetMessage()
