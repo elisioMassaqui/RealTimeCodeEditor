@@ -16,6 +16,27 @@ public class CodeEditor : MonoBehaviour
     public Button compileButton;
     public TextMeshProUGUI outputText;
 
+    MyScript myScript;
+
+    public string scriptando;
+
+    public int interpolado;
+    public int vectorReal;
+    public int vectorIn;
+    public int multiplo;
+
+    void Update() {
+
+        myScript.myVariable = scriptando;
+
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            interpolado = myScript.Interpolar(vectorReal, vectorIn, multiplo);
+            Debug.Log(interpolado);
+        }
+    }
+
     private string defaultCode = @"
 using UnityEngine;
 
@@ -62,6 +83,8 @@ public class DynamicScript : MonoBehaviour
         {
             compileButton.onClick.AddListener(CompileAndRunCode);
         }
+
+        myScript = GetComponent<MyScript>();
     }
 
     void CompileAndRunCode()
@@ -109,6 +132,7 @@ public class DynamicScript : MonoBehaviour
             outputText.text = "Método Run não encontrado!";
         }
     }
+
 
     Assembly CompileAssembly(string code)
     {
