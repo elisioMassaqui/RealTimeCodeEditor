@@ -1571,7 +1571,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1694627639}
   - component: {fileID: 1694627638}
-  - component: {fileID: 1694627640}
   m_Layer: 0
   m_Name: CodeEditor
   m_TagString: Untagged
@@ -1594,6 +1593,7 @@ MonoBehaviour:
   codeInputField: {fileID: 1307522159}
   compileButton: {fileID: 950203344}
   outputText: {fileID: 2127225098}
+  myScript: {fileID: 1592375811}
   scriptando: ssssssss
   interpolado: 0
   vectorReal: 0
@@ -1614,19 +1614,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1694627640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1694627637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a517b44ae3259a74b8ccfa28690f8534, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myVariable: Hello
 --- !u!1 &1997119942
 GameObject:
   m_ObjectHideFlags: 0

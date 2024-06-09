@@ -16,14 +16,14 @@ public class CodeEditor : MonoBehaviour
     public Button compileButton;
     public TextMeshProUGUI outputText;
 
-    MyScript myScript;
+    public MyScript myScript;
 
     public string scriptando;
 
-    public int interpolado;
-    public int vectorReal;
-    public int vectorIn;
-    public int multiplo;
+    public int interpolado = 3;
+    public int vectorReal = 4;
+    public int vectorIn = 3;
+    public int multiplo = 2;
 
     void Update() {
 
@@ -83,8 +83,6 @@ public class DynamicScript : MonoBehaviour
         {
             compileButton.onClick.AddListener(CompileAndRunCode);
         }
-
-        myScript = GetComponent<MyScript>();
     }
 
     void CompileAndRunCode()

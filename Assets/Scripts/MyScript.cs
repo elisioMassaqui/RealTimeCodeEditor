@@ -6,8 +6,9 @@ public class MyScript : MonoBehaviour
 
     // Outros métodos e lógica do script...
 
-    public int Interpolar(int a, int b, int c){
-        // int interpolation = a + (b - a) * c;
-        return a + (b - a) * c;
+    public int Interpolar(int Real, int Imagine, int Multiplo){
+
+        return Real + (Imagine - Real) * Multiplo;
+
     }
 }
