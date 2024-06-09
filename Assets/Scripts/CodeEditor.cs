@@ -14,7 +14,22 @@ public class CodeEditor : MonoBehaviour
 {
     public TMP_InputField codeInputField;
     public Button compileButton;
+    public Button runAgainButton;  // Novo botão para executar novamente
     public TextMeshProUGUI outputText;
+
+    public MyScript myScript;
+
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            myScript.instanciarBolinha();
+        }
+    }
+
+    public void exemplo()
+    {
+        myScript = GetComponent<MyScript>();
+    }
 
     private string defaultCode = @"
 using UnityEngine;
@@ -28,11 +43,12 @@ public class DynamicScript : MonoBehaviour
         // Defina ou atualize o valor da variável 'message' aqui
         message = ""Hello, Universe!"";
 
-         MyScript myScript = FindObjectOfType<MyScript>();
+        MyScript myScript = FindObjectOfType<MyScript>();
         if (myScript != null)
         {
             // Modificar o valor de myVariable no script MyScript
             myScript.myVariable = ""World!"";
+            myScript.instanciarBolinha();
         }
         else
         {
@@ -73,6 +89,10 @@ public class DynamicScript : MonoBehaviour
         {
             compileButton.onClick.AddListener(CompileAndRunCode);
         }
+        if (runAgainButton != null)  // Configurar o botão "Run Again"
+        {
+            runAgainButton.onClick.AddListener(RunCompiledCode);
+        }
     }
 
     void CompileAndRunCode()
@@ -98,29 +118,41 @@ public class DynamicScript : MonoBehaviour
         dynamicScriptInstance = dynamicGameObject.AddComponent(dynamicScriptType);
 
         // Chamar o método Run do script
-        MethodInfo runMethod = dynamicScriptType.GetMethod("Run", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-        if (runMethod != null)
-        {
-            runMethod.Invoke(dynamicScriptInstance, null);
+        RunCompiledCode();
+    }
 
-            // Obter a mensagem e atualizar o outputText
-            MethodInfo getMessageMethod = dynamicScriptType.GetMethod("GetMessage", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-            if (getMessageMethod != null)
+    void RunCompiledCode()
+    {
+        if (dynamicScriptInstance != null)
+        {
+            // Chamar o método Run do script
+            MethodInfo runMethod = dynamicScriptType.GetMethod("Run", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+            if (runMethod != null)
             {
-                string message = (string)getMessageMethod.Invoke(dynamicScriptInstance, null);
-                outputText.text = message;
+                runMethod.Invoke(dynamicScriptInstance, null);
+
+                // Obter a mensagem e atualizar o outputText
+                MethodInfo getMessageMethod = dynamicScriptType.GetMethod("GetMessage", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+                if (getMessageMethod != null)
+                {
+                    string message = (string)getMessageMethod.Invoke(dynamicScriptInstance, null);
+                    outputText.text = message;
+                }
+                else
+                {
+                    outputText.text = "Método GetMessage não encontrado!";
+                }
             }
             else
             {
-                outputText.text = "Método GetMessage não encontrado!";
+                outputText.text = "Método Run não encontrado!";
             }
         }
         else
         {
-            outputText.text = "Método Run não encontrado!";
+            outputText.text = "Instância do script dinâmico não encontrada!";
         }
     }
-
 
     Assembly CompileAssembly(string code)
     {

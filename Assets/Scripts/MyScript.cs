@@ -1,14 +1,22 @@
+using System;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class MyScript : MonoBehaviour
 {
     public string myVariable = "Hello";
     public GameObject bolinhaPrefab;
-    public Transform bolinhaPosition;
+    public Transform bolinhaLocal;
 
-    public void instanciar()
+    void Update(){
+        if (Input.GetKeyUp(KeyCode.I))
+        {
+            instanciarBolinha();
+        }
+    }
+    public void instanciarBolinha()
     {
-        Instantiate(bolinhaPrefab, bolinhaPosition);
+        Instantiate(bolinhaPrefab, bolinhaLocal.localPosition, bolinhaLocal.localRotation);
     }
 
     // Outros métodos e lógica do script...
