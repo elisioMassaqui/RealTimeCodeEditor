@@ -2,6 +2,8 @@
 
 O script CodeEditor é parte de um projeto Unity que utiliza Roslyn para permitir a edição, compilação e execução dinâmica de código C# diretamente no jogo. Esse editor de código in-game facilita a criação e modificação de scripts em tempo real, proporcionando uma interação mais ágil e iterativa.
 
+[!](https://github.com/elisioMassaqui/RealTimeCodeEditor/blob/master/Anota%C3%A7%C3%A3o%202024-06-11%20202519.png)
+
 Componentes Principais:
 Bibliotecas Utilizadas:
 
